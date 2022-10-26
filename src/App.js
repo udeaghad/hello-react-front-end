@@ -1,14 +1,18 @@
 import React from 'react';
-import './App.css';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import Messages from './components/Messages';
 
-const App = () => {
-  return (
-    <div className="App">
-      <h1>Hi</h1>
-      <Messages />
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <h1>Home Page</h1>
+
+    <NavLink to="/messages">Click to see messages</NavLink>
+
+    <Routes>
+
+      <Route path="/messages" element={<Messages />} />
+    </Routes>
+  </>
+);
 
 export default App;
